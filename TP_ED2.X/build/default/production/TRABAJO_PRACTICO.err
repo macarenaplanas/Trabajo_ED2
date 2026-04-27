@@ -1,0 +1,6 @@
+Warning[205] C:\USERS\MACAR\MPLABXPROJECTS\TP_ED2.X\TRABAJO_PRACTICO.ASM 1 : Found directive in column 1. (LIST)
+Message[302] C:\USERS\MACAR\MPLABXPROJECTS\TP_ED2.X\TRABAJO_PRACTICO.ASM 46 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\MACAR\MPLABXPROJECTS\TP_ED2.X\TRABAJO_PRACTICO.ASM 47 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\MACAR\MPLABXPROJECTS\TP_ED2.X\TRABAJO_PRACTICO.ASM 51 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\MACAR\MPLABXPROJECTS\TP_ED2.X\TRABAJO_PRACTICO.ASM 56 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\MACAR\MPLABXPROJECTS\TP_ED2.X\TRABAJO_PRACTICO.ASM 72 : Register in operand not in bank 0.  Ensure that bank bits are correct.
