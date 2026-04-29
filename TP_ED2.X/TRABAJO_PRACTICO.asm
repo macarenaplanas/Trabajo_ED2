@@ -10,10 +10,10 @@ LIST p=16F887
 ; Variables
 
  ; holaaaaaaaaaaaaaa
-W_TEMP      EQU 0x70
+W_TEMP      EQU 0x70 ;guardar w 
 STATUS_TEMP EQU 0x71
 
-INDEX EQU 0x20
+INDEX EQU 0x20 ;puntero de displays
 NUM0  EQU 0x21
 NUM1  EQU 0x22
 NUM2  EQU 0x23
@@ -43,7 +43,7 @@ INICIO:
     MOVLW 0x03
     MOVWF NUM3
 
-    ; Todo digital
+    ;digital
     BANKSEL ANSEL
     CLRF ANSEL
     CLRF ANSELH
@@ -52,7 +52,7 @@ INICIO:
     BANKSEL TRISD
     CLRF TRISD
 
-    ; RC0-RC3 salidas
+    ; RC0-RC3 salidas-displays
     BANKSEL TRISC
     MOVLW B'11110000'
     MOVWF TRISC
@@ -91,6 +91,7 @@ LOOP:
 
 
 ; Tabla 7 segmentos-Ánodo común
+;Hexadecimal
 
 TABLA_DISPLAY:
     ADDWF PCL,F
@@ -112,7 +113,7 @@ TABLA_DISPLAY:
     RETLW 0x8E ;F
 
 
-; ISR
+; ISR-RUTINA DE INTERRUPCION 
 
 ISR:
     ; Guardar contexto
