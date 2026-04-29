@@ -1,3 +1,4 @@
+;TP4: Armar una secuencia con 4 Displays
 LIST p=16F887
     RADIX HEX
 #include "p16f887.inc"
@@ -5,9 +6,9 @@ LIST p=16F887
  __CONFIG _CONFIG1, _FOSC_HS & _WDTE_OFF & _PWRTE_OFF & _MCLRE_ON & _CP_OFF & _CPD_OFF & _BOREN_ON & _IESO_ON & _FCMEN_ON & _LVP_ON
  __CONFIG _CONFIG2, _BOR4V_BOR40V & _WRT_OFF
 
-;========================
+
 ; Variables
-;========================
+
  ; holaaaaaaaaaaaaaa
 W_TEMP      EQU 0x70
 STATUS_TEMP EQU 0x71
@@ -24,9 +25,9 @@ NUM3  EQU 0x24
     ORG 0x04
     GOTO ISR
 
-;========================
+
 ; Inicio
-;========================
+
 INICIO:
 
     ; Mostrar F123
@@ -65,9 +66,8 @@ INICIO:
     MOVLW 0x0F
     MOVWF PORTC
 
-    ;========================
     ; Timer0
-    ;========================
+    
     BANKSEL OPTION_REG
     MOVLW B'00000111'
     MOVWF OPTION_REG
@@ -76,9 +76,9 @@ INICIO:
     MOVLW D'237'
     MOVWF TMR0
 
-    ;========================
+    
     ; Interrupciones
-    ;========================
+    
     BANKSEL INTCON
     BCF INTCON,TMR0IF
     BSF INTCON,TMR0IE
@@ -89,10 +89,9 @@ INICIO:
 LOOP:
     GOTO LOOP
 
-;========================
-; Tabla 7 segmentos
-; Ánodo común
-;========================
+
+; Tabla 7 segmentos-Ánodo común
+
 TABLA_DISPLAY:
     ADDWF PCL,F
     RETLW 0xC0 ;0
@@ -112,9 +111,9 @@ TABLA_DISPLAY:
     RETLW 0x86 ;E
     RETLW 0x8E ;F
 
-;========================
+
 ; ISR
-;========================
+
 ISR:
     ; Guardar contexto
     MOVWF W_TEMP
@@ -160,10 +159,10 @@ ISR:
     SWAPF W_TEMP,W
     RETFIE
 
-;========================
+
 ; Habilitación displays
-; Ánodo común activo en 0
-;========================
+
+
 HABILITACION_DISPLAY:
     ADDWF PCL,F
     RETLW B'00001110' ; Display 0 -> RC0
