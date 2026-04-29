@@ -91,7 +91,7 @@ LOOP:
 
 ;========================
 ; Tabla 7 segmentos
-; Ánodo común
+; Ãnodo comÃºn
 ;========================
 TABLA_DISPLAY:
     ADDWF PCL,F
@@ -130,7 +130,7 @@ ISR:
     MOVLW B'00001111'
     MOVWF PORTC
 
-    ; Seleccionar número
+    ; Seleccionar nÃºmero
     MOVLW NUM0
     ADDWF INDEX,W
     MOVWF FSR
@@ -161,14 +161,15 @@ ISR:
     RETFIE
 
 ;========================
-; Habilitación displays
-; Ánodo común activo en 0
+; HabilitaciÃ³n displays
+; Ãnodo comÃºn activo en 0
 ;========================
 HABILITACION_DISPLAY:
     ADDWF PCL,F
     RETLW B'00001110' ; Display 0 -> RC0
-    RETLW B'00001011' ; Display 1 -> RC2
     RETLW B'00001101' ; Display 2 -> RC1
+    RETLW B'00001011' ; Display 1 -> RC2
     RETLW B'00000111' ; Display 3 -> RC3
 
     END
+
